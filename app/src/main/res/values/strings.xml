@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Class0308</string>
+    <string name="dialog_title">Guess</string>
+    <string name="ok">OK</string>
+    <string name="please_enter_a_number">Please enter a number</string>
+    <string name="_1_to_10">1 to 10</string>
+    <string name="button_guess">Guess</string>
+    <string name="counter_init">0</string>
+    <string name="smaller">smaller</string>
+    <string name="bigger">bigger</string>
+    <string name="bingo">You got it</string>
+    <string name="something_go_wrong">Something go round</string>
+</resources>
