@@ -1,20 +1,21 @@
 package com.john1119.class0308
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.john1119.class0308.databinding.FragmentBlankBinding
+import com.john1119.class0308.databinding.FragmentGuessBinding
 
-class BlankFragment : Fragment() {
-    lateinit var binding: FragmentBlankBinding
+class GuessFragment : Fragment() {
+    lateinit var binding: FragmentGuessBinding
     val viewModel by viewModels<GuessViewModel>()
 
     companion object {
-        private val TAG = BlankFragment::class.java.simpleName
+        private val TAG = GuessFragment::class.java.simpleName
     }
 
     override fun onCreateView(
@@ -22,7 +23,8 @@ class BlankFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBlankBinding.inflate(inflater)
+        Log.d(TAG, "onCreateView: ")
+        binding = FragmentGuessBinding.inflate(inflater)
         return binding.root
     }
 

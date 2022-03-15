@@ -5,7 +5,10 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1518987341772152" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_bmi.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_empty.xml" value="0.17753623188405798" />
+        <entry key="app/src/main/res/layout/fragment_guess.xml" value="0.1331521739130435" />
+        <entry key="app/src/main/res/menu/menu_nav.xml" value="0.21875" />
       </map>
     </option>
   </component>

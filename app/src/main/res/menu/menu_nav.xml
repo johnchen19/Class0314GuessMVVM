@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_guess"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="guess" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="search" />
+    <item
+        android:id="@+id/action_bmi"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="bmi" />
+</menu>
