@@ -14,40 +14,32 @@ class MainActivity : AppCompatActivity() {
     }
 
     lateinit var binding: ActivityMainBinding
-    val viewModel by viewModels<GuessViewModel>()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {//一部份放onCreateView，另一部份放onViewCreated
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel.counter.observe(this) {
-            binding.tvCounter.setText(it.toString())
-        }
-        viewModel.gameState.observe(this) { state ->
-            val message = when (state) {
-                GuessViewModel.GameState.BIGGER -> getString(R.string.bigger)
-                GuessViewModel.GameState.SMALLER -> getString(R.string.smaller)
-                GuessViewModel.GameState.BINGO -> getString(R.string.bingo)
-                GuessViewModel.GameState.INIT -> "START"
-                else -> getString(R.string.something_go_wrong)
-            }
-            AlertDialog.Builder(this)
-                .setTitle(getString(R.string.dialog_title))//快速鍵alt+enter
-                .setMessage(message)
-                .setPositiveButton(getString(R.string.ok)) { d, w ->
-                    if (state == GuessViewModel.GameState.BINGO) {
-                        viewModel.reset()
-                    }
-                }
-                .show()
-        }
+        initFragment()
     }
 
-    fun guess(view: View) {
-        Log.d(TAG, "Testing")
-        var number = binding.edNumber.text.toString().toInt()
-        viewModel.guess(number)
+    private fun initFragment() {
+        val guess1to10Fragment=BlankFragment()
+        val transaction=supportFragmentManager.beginTransaction()
+        transaction.add(R.id.main_container,guess1to10Fragment)
+        transaction.commit()
+
+        //kotlin way上等於下
+//        supportFragmentManager.beginTransaction().let{
+//            it.add(R.id.main_container,guess1to10Fragment).commit()
+//        }//讓他做什麼，裡面要用it
+        supportFragmentManager.beginTransaction().run{
+            add(R.id.main_container,guess1to10Fragment).commit()
+        }//單純做事
+//        val t = supportFragmentManager.beginTransaction().apply{
+//            add(R.id.main_container,guess1to10Fragment).commit()
+//        }//做完事情還要存起來
+
     }
+
 
 }
