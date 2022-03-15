@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.room.Database
+import androidx.room.Room
 import com.john1119.class0308.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     companion object {
         private val TAG = MainActivity::class.java.simpleName
     }
-
+    lateinit var database: TranDatabase
     lateinit var binding: ActivityMainBinding
     val fragments = mutableListOf<Fragment>()
 
@@ -37,8 +43,18 @@ class MainActivity : AppCompatActivity() {
                     }
                     true
                 }
-                else ->true
+                else -> true
             }
+        }
+        //insert database
+        val t1 = Transaction(1, "hank", "20220315", 3000, 1)
+        database = Room.databaseBuilder(
+            this,
+            TranDatabase::class.java, "trans.db"
+        )
+            .build()
+        thread {
+            database.transactionDao().insert(t1)
         }
     }
 
