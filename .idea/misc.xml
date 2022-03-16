@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/fragment_bmi.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_empty.xml" value="0.17753623188405798" />
         <entry key="app/src/main/res/layout/fragment_guess.xml" value="0.1331521739130435" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_nav.xml" value="0.21875" />
       </map>
     </option>
